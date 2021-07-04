@@ -17,7 +17,7 @@ function preload()
 function setup() {
   createCanvas(800,400);
 
-  spacecraftObj = createSprite(150, 300, 30, 30);
+  spacecraftObj = createSprite(150, 340, 30, 30);
   spacecraftObj.addImage(spacecraft);
   spacecraftObj.scale = 0.2;
   
@@ -53,6 +53,9 @@ function draw() {
     {
       spacecraftObj.y = spacecraftObj.y - 7;
     }
+    // fill("yellow");
+    // textSize(25);
+    // text(spacecraftObj.x + "," + spacecraftObj.y, 100, 100);
   }
   else if(hasDocked)
   {
@@ -61,7 +64,7 @@ function draw() {
     text("Docking Successful!", 100, 370);
   }
 
-  if(spacecraftObj.x === 335 && spacecraftObj.y === 272)
+  if(spacecraftObj.x < 335 && spacecraftObj.x > 330 && spacecraftObj.y > 265 && spacecraftObj.y < 275)
   {
     hasDocked = true;
   }
